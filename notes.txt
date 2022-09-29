@@ -1,0 +1,10 @@
+
+va_start, which initializes the list, 
+va_arg, which returns the next argument in the list, 
+va_end, which cleans up the variable argument list.
+
+To use these functions, we need a variable capable of storing a variable-length argument list--
+this variable will be of type va_list. va_list is like any other type. 
+For example, the following code declares a list that can be used to store a variable number of arguments.
+
+va_list a_list; 
