@@ -6,7 +6,7 @@
 #    By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 21:16:11 by alejarod          #+#    #+#              #
-#    Updated: 2022/09/30 20:18:47 by alejarod         ###   ########.fr        #
+#    Updated: 2022/10/01 13:09:14 by alejarod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,8 @@ SRCS = ft_printf.c
 
 OBJS = $(SRCS:.c=.o)
 
-INCLUDES = libftprint.h
-
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-
-%.o: %.c
-	$(CC) -c $(CFLAGS) $^	#it means take what is on both sides, .o and .c
 
 all: $(NAME)
 
@@ -37,5 +32,5 @@ fclean: clean			#it executes clean and then removes the .a file too
 
 re: fclean $(NAME)
 
-.PHONY:
+.PHONY: all clean fclean re
 
