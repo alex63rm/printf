@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 21:15:26 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/02 19:20:21 by alejarod         ###   ########.fr       */
+/*   Created: 2022/10/02 17:35:07 by alejarod          #+#    #+#             */
+/*   Updated: 2022/10/02 21:34:22 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libftprintf.h"
 
-# include <stdio.h>
-# include <stdarg.h>	// Añadir la librería para la gestión de las variádicas
-# include <unistd.h>
+size_t	ft_strlen(char *str)
+{
+	size_t i;
 
-int		ft_printf(char const *str, ...);
-size_t	ft_check_format(char const *ptr, size_t len, va_list args);
-size_t	ft_putchar(int c);
-size_t	ft_strlen(char *str);
-size_t	ft_putnbr(int j);
-
-#endif
+	i = 0;
+	while(str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return(i);
+}

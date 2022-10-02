@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkvar.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 11:55:08 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/01 15:15:29 by alejarod         ###   ########.fr       */
+/*   Created: 2022/10/02 20:33:31 by alejarod          #+#    #+#             */
+/*   Updated: 2022/10/02 21:33:09 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libftprintf.h"
+#include "libftprintf.h"
 
-	size_t	ft_checkvar(char const *ptr, size_t len)	//void *ptr, int i
+size_t	ft_putnbr(int n)
+{
+	if (n == -2147483648)
+		write(1,"-2147483648", 11);
+	if (n < 0)
 	{
-		if(*ptr == 'c')
-			write(1, "1", 1);
-		len++;
-		
-		return(len);
-		
+		ft_putchar('-');
+		n = n * -1;
 	}
+	// recursive
+	if (n > 9)
+		ft_putnbr(n / 10);			// divide the number again by 10;
+	ft_putchar((n % 10) + '0');		// write digit by digit n % 10;
+	return (n);
+}
