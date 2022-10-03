@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 20:33:31 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/03 21:00:53 by alejarod         ###   ########.fr       */
+/*   Created: 2022/10/03 21:00:55 by alejarod          #+#    #+#             */
+/*   Updated: 2022/10/03 21:09:10 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-size_t	ft_putnbr(int n)
+size_t ft_putnbr_u(unsigned int n)
 {
-	if (n == -2147483648)
-		write(1,"-2147483648", 11);
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n = n * -1;
-	}
-	// recursive
 	if (n > 9)
-		ft_putnbr(n / 10);			// divide the number again by 10;
-	ft_putchar((n % 10) + '0');		// write digit by digit n % 10;
-	return (n);
+		ft_putnbr_u(n / 10);
+	ft_putchar((n % 10) + '0');
+	return(n);
 }
+
