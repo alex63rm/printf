@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 16:48:15 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/02 21:34:48 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/10/06 21:51:14 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 size_t	ft_putchar(int c)
 {
 	write(1, &c, 1);
-	return(c);
+	return(1);
 }

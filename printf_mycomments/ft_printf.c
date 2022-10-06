@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:23:07 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/02 19:32:48 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/10/06 21:21:10 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ int	ft_printf(char const *str, ...)		//printf returns an int, all the bytes that
 	while(str[i])
 	{
 		if(str[i] != '%')
+		{
 			write(1, &str[i], 1);
-		if(str[i] == '%')
+			len++;
+		}
+		else if(str[i] == '%')
 		{
 			len = ft_check_format(&str[++i], len, args);	// i nee to pass the len and the args to the function
 			//control de espacios?
@@ -41,10 +44,6 @@ int	ft_printf(char const *str, ...)		//printf returns an int, all the bytes that
 		}
 		i++;
 	}
-
-	
 	va_end(args);		// end the list
-	
 	return(len);
-
 }

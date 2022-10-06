@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 11:55:08 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/03 22:34:20 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/10/06 22:38:57 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,9 @@
 		if (*ptr == 'c')
 			len += ft_putchar(va_arg(args, int));
 		if (*ptr == '%')
-		{
-			//len++;
-			write(1, "%", 1);
-		}
+			len += ft_putchar('%');
 		if (*ptr == 's')
 			len += ft_strlen(va_arg(args, char *));
-
  		if (*ptr == 'i' || *ptr == 'd')		// d and i is the same, digit or integer
 			len += ft_putnbr(va_arg(args, int));
 		if (*ptr == 'u')
@@ -32,8 +28,6 @@
 			len += ft_puthex_lower(va_arg(args, unsigned int));	//posiblemente meter un double or long long????
 		if (*ptr == 'X')
 			len += ft_puthex_upper(va_arg(args, unsigned int));
-/* 		if (*ptr == 'p')
-			len += ft_voidptr(va_arg(args, void *)); */
 
 		/* else
 			ft_putchar(' ');
