@@ -6,11 +6,11 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:23:07 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/06 21:21:10 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/10/07 21:21:27 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 /* Logic approach of this project
 1. start reading the string until you find a % character
@@ -45,5 +45,5 @@ int	ft_printf(char const *str, ...)		//printf returns an int, all the bytes that
 		i++;
 	}
 	va_end(args);		// end the list
-	return(len);
+	return((int)len);
 }

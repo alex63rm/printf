@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef ft_printf_H
+# define ft_printf_H
 
 # include <stdio.h>
 # include <stdarg.h>	// Añadir la librería para la gestión de las variádicas
@@ -20,10 +20,11 @@
 int		ft_printf(char const *str, ...);
 size_t	ft_check_format(char const *ptr, size_t len, va_list args);
 size_t	ft_putchar(int c);
-size_t	ft_strlen(char *str);
+size_t	ft_putstr(char *str);
 size_t	ft_putnbr(int j);
 size_t	ft_putnbr_u(unsigned int k);
 size_t	ft_puthex_lower(unsigned int hex);
 size_t	ft_puthex_upper(unsigned int hex);
+size_t	ft_putptr(size_t address);
 
 #endif

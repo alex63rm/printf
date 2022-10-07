@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 17:35:07 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/06 22:15:05 by alejarod         ###   ########.fr       */
+/*   Created: 2022/10/07 20:13:55 by alejarod          #+#    #+#             */
+/*   Updated: 2022/10/07 22:56:31 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-size_t	ft_strlen(char *str)
+static size_t	ft_address_len(size_t address)
 {
-	size_t i;
+	size_t	i;
 
-	i = 0;
-	if (!str)			// if I receive a null string I have to return (NULL), 6 chars.
+	i = 1;	
+	while(address >= 16)
 	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-		//return (write(1, "(null)", 6));
-	while(str[i] != '\0')
-	{
-		ft_putchar(str[i]);
+		address = address / 16;
 		i++;
 	}
 	return(i);
+}
+
+size_t ft_putptr(size_t address)
+{
+	size_t	address_len;
+	
+/* 	if(!address)
+		return(ft_putstr("NULL")); */
+	address_len = 0;
+	address_len += ft_address_len(address);
+	if(address >= 16)
+		ft_putptr(address / 16);
+	ft_putchar("0123456789abcdef"[address % 16]);
+	return(address_len);
 }

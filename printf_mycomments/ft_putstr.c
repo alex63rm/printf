@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex_upper.c                                  :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 22:21:59 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/07 23:03:28 by alejarod         ###   ########.fr       */
+/*   Created: 2022/10/02 17:35:07 by alejarod          #+#    #+#             */
+/*   Updated: 2022/10/07 22:41:10 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static size_t	ft_len_hex(unsigned int hex)
+size_t	ft_putstr(char *str)
 {
-	size_t	i;
+	size_t i;
 
-	i = 1;
-	while (hex >= 16)
+	i = 0;
+	if (!str)			// if I receive a null string I have to return (NULL), 6 chars.
 	{
-		hex = hex / 16;
+		ft_putstr("(null)");	//return (write(1, "(null)", 6));
+		return(6);
+	}
+	while(str[i] != '\0')
+	{
+		ft_putchar(str[i]);
 		i++;
 	}
 	return(i);
-}
-
-size_t	ft_puthex_upper(unsigned int hex)
-{
-	size_t	len_hex;
-	
-	len_hex = 0;
-	len_hex += ft_len_hex(hex);
-	if (hex >= 16)
-		ft_puthex_upper(hex / 16);
-	ft_putchar("0123456789ABCDEF"[hex % 16]);
-	return(len_hex);
 }

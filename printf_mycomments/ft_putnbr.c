@@ -6,13 +6,13 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 20:33:31 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/06 22:44:13 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/10/07 22:43:31 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	ft_len_nbr(int n)
+static size_t	ft_len_nbr(int n)
 {
 	size_t	i;
 	
@@ -22,7 +22,7 @@ int	ft_len_nbr(int n)
 		n = n / 10;
 		i++;
 	}
-	return(i);
+	return (i);
 }
 
 size_t	ft_putnbr(int n)			// I do not need to return anything, it will just increase len.
@@ -38,10 +38,10 @@ size_t	ft_putnbr(int n)			// I do not need to return anything, it will just incr
 		n = n * -1;
 	}
 	// recursive
-	len_nbr += ft_len_nbr(n);		// esto lo meto antes de la recursiva
+	len_nbr += ft_len_nbr(n);		// aqui mido para retornar len_nbr esto lo meto antes de la recursiva
 	if (n > 9)
 		ft_putnbr(n / 10);			// divide the number again by 10;
-	ft_putchar((n % 10) + '0');		// write digit by digit n % 10;
+	ft_putchar((n % 10) + '0');		// write digit by digit n % 10; Aqui escribo
 	return (len_nbr);
 }
 
