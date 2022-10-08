@@ -6,26 +6,19 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:23:07 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/07 21:21:27 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:17:31 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/* Logic approach of this project
-1. start reading the string until you find a % character
-2. When the % character is found, we have to determine the type of the variable of the next char
-3.
-
-*/
-
 int	ft_printf(char const *str, ...)		//printf returns an int, all the bytes that will be printed
 {
 	va_list	args;		// create a va_list where the arguments will be stored
-	size_t	len;		// counter of the lenght of str, which is the return value in bytes of printf
+	size_t	len;		// counter of the lenght of str, which is the return value of printf
 	int	i; 				// local counter in this function
 	
-	va_start(args, str);	// va_start(where I will save them, last fixed argument)
+	va_start(args, str);	// va_start(where I will save the varaiables, points to the last fixed argument)
 	
 	len = 0;
 	i = 0;
@@ -37,11 +30,7 @@ int	ft_printf(char const *str, ...)		//printf returns an int, all the bytes that
 			len++;
 		}
 		else if(str[i] == '%')
-		{
-			len = ft_check_format(&str[++i], len, args);	// i nee to pass the len and the args to the function
-			//control de espacios?
-	
-		}
+			len = ft_check_format(&str[++i], len, args);	// i need to pass the len and the args to the function
 		i++;
 	}
 	va_end(args);		// end the list

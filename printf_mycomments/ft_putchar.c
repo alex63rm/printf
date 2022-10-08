@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 16:48:15 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/07 22:34:16 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:18:39 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 size_t	ft_putchar(int c)
 {
-	write(1, &c, 1);	//this is to write in the screen
-	return(1);			// this is the return value of printf
+	write(1, &c, 1);	// Step 1. Write on screen
+	return(1);			// Step 2. Return the length value
 }

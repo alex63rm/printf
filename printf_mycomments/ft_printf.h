@@ -14,7 +14,7 @@
 # define ft_printf_H
 
 # include <stdio.h>
-# include <stdarg.h>	// Añadir la librería para la gestión de las variádicas
+# include <stdarg.h>	// This is the library for the variadic functions
 # include <unistd.h>
 
 int		ft_printf(char const *str, ...);

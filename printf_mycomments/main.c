@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 11:05:32 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/07 22:54:28 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:30:21 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,6 @@ int	main(void)
 	void *address;
 
 	address = &hex2;
-	
-
-	//me falla si me meten un numero o una letra no identificada despues del %
-	//los numeros avanzan espacios
-	//la funcion original mete espacios
 	
 	a = ft_printf("My: char is %c, my str is %s, percentage is %%home, final int is %d, \
 	unsigned int is %u, hex lower is %x, upper hex is %X, pointer is %p", c, str, j, k, hex, hex2, address);

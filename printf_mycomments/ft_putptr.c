@@ -6,7 +6,7 @@
 /*   By: alejarod <alejarod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 20:13:55 by alejarod          #+#    #+#             */
-/*   Updated: 2022/10/07 22:56:31 by alejarod         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:21:29 by alejarod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static size_t	ft_address_len(size_t address)
 	size_t	i;
 
 	i = 1;	
-	while(address >= 16)
+	while (address >= 16)
 	{
 		address = address / 16;
 		i++;
@@ -29,8 +29,6 @@ size_t ft_putptr(size_t address)
 {
 	size_t	address_len;
 	
-/* 	if(!address)
-		return(ft_putstr("NULL")); */
 	address_len = 0;
 	address_len += ft_address_len(address);
 	if(address >= 16)
