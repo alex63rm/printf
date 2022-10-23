@@ -1,5 +1,3 @@
-***WORK IN PROGRESS***
-
 You can find 2 folders in this project:
 
 Main:
